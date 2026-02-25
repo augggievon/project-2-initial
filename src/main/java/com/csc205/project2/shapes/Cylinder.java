@@ -34,6 +34,11 @@ public class Cylinder extends Shape3D {
         this.height = 0.0;
     }
 
+    @Override
+    public String getDimensions() {
+        return String.format("radius, height"+radius+" "+height);
+    }
+
     public Cylinder(String color, double radius, double height) {
         // validation to verify that user is inputting a correct color
         super("Cylinder", (color == null || color.trim().isEmpty()) ? "Unknown Color" : color);
@@ -87,8 +92,7 @@ public class Cylinder extends Shape3D {
     @Override
     public String toString() {
         return super.toString() +
-                String.format("\n*#Volume-Of-Cylinder:    " +calculateVolume(),
-                        "Surface area of Cylinder:      "+calculateSurfaceArea());
+                String.format("\n Efficiency Ratio: "+getEfficiencyRatio());
     }
 
 

@@ -67,6 +67,30 @@ public abstract class Shape3D implements ThreeDimensionalShape {
     // -------------------------------------------------------------------------
 
     /**
+     * Returns a string describing the shape's dimensions (e.g. "radius = 5.00").
+     * Each subclass defines what its relevant dimensions are.
+     *
+     * @return formatted dimension string
+     */
+    public abstract String getDimensions();
+
+    public double getEfficiencyRatio() {
+        double vol = getVolume();
+        if (vol == 0) return 0;
+
+        double ratio = getSurfaceArea() / vol;
+        return Math.round(ratio * 100.0) / 100.0;  // 2 decimal places
+    }
+
+    public boolean isLargerThan(Shape3D other) {
+        return this.getVolume() > other.getVolume();
+    }
+
+
+
+
+
+    /**
      * Calculates and returns the volume of the shape.
      * Each concrete subclass provides its own implementation.
      *
@@ -165,11 +189,13 @@ public abstract class Shape3D implements ThreeDimensionalShape {
                 "Shape:        %s%n" +
                         "Color:        %s%n" +
                         "Volume:       %.2f%n" +
-                        "Surface Area: %.2f",
+                        "Surface Area: %.2f"+
+                        "\nDimensions: %s",
                 name,
                 color,
                 getVolume(),
-                getSurfaceArea()
+                getSurfaceArea(),
+                getDimensions()
         );
     }
 }

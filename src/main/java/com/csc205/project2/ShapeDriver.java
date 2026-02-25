@@ -17,28 +17,38 @@ public class ShapeDriver {
         TriangularPrism thing5 = new TriangularPrism("midnight black", 5.5, 4.8,6.9,7.0,3.3);
         thing.calculateVolume();
         thing.calculateSurfaceArea();
+        thing.getEfficiencyRatio();
         System.out.println(thing);
 
         System.out.println();
 
         thing2.calculateSurfaceArea();
         thing2.calculateVolume();
+        thing2.getDimensions();
+        thing2.getEfficiencyRatio();
         System.out.println(thing2);
 
         System.out.println();
 
         thing3.calculateVolume();
         thing3.calculateSurfaceArea();
+        thing3.getDimensions();
+        thing3.getEfficiencyRatio();
         System.out.println(thing3);
         System.out.println();
 
         thing4.calculateVolume();
         thing4.calculateSurfaceArea();
+        thing4.getDimensions();
+        thing4.getEfficiencyRatio();
         System.out.println(thing4);
         System.out.println();
 
         thing5.calculateSurfaceArea();
         thing5.calculateVolume();
+        thing5.getDimensions();
+        thing5.getEfficiencyRatio();
+
         System.out.println(thing5);
 
     }

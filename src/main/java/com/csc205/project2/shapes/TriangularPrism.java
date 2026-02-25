@@ -36,6 +36,12 @@ public class TriangularPrism extends Shape3D{
 
     }
 
+    @Override
+    public String getDimensions() {
+        return String.format("base: "+base+" "+"prismLength: "+prismLength+" triangleHieght: "+
+                triangleHeight+" sideA: "+sideA+" sideC: "+sideC);
+    }
+
     public TriangularPrism(String color, double base, double prismLength,double triangleHeight
     , double sideA, double sideC) {
         // validation to verify that user is inputting a correct color
@@ -137,8 +143,7 @@ public class TriangularPrism extends Shape3D{
     @Override
     public String toString() {
         return super.toString() +
-                String.format("\n*#Volume-Of-TriangularPrism:    " +calculateVolume(),
-                        "Surface area of Triangular Prism:      "+calculateSurfaceArea());
+                String.format("\n Effieciency Ratio: "+getEfficiencyRatio());
     }
 
 

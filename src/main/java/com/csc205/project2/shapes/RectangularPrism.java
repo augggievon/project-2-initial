@@ -34,6 +34,8 @@ public class RectangularPrism extends Shape3D{
         this.width = 0.0;
     }
 
+
+
     public RectangularPrism(String color, double length, double height,double width) {
         // validation to verify that user is inputting a correct color
         super("retangularprism", (color == null || color.trim().isEmpty()) ? "Unknown Color" : color);
@@ -53,6 +55,10 @@ public class RectangularPrism extends Shape3D{
 
 
         return length*width*height;
+    }
+    @Override
+    public String getDimensions() {
+        return String.format("length: "+length+" width: "+width+" height: "+height);
     }
 
     @Override
@@ -102,8 +108,7 @@ public class RectangularPrism extends Shape3D{
     @Override
     public String toString() {
         return super.toString() +
-                String.format("\n*#Volume-Of-RectangularPrism:    " +calculateVolume(),
-                        "Surface area of Rectangular Prism:      "+calculateSurfaceArea());
+                String.format("\nEfficiency Ratio: "+getEfficiencyRatio());
     }
 
 

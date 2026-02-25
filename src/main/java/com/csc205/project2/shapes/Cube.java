@@ -32,6 +32,9 @@ public class Cube extends Shape3D{
         super("Cube","none");
         this.side=0.0;
     }
+
+
+
     public Cube(String color, double side) {
         // validation to verify that user is inputting a correct color
         super("Cube", (color == null || color.trim().isEmpty()) ? "Unknown Color" : color);
@@ -42,6 +45,13 @@ public class Cube extends Shape3D{
         }
         this.side = side;
     }
+
+    @Override
+    public String getDimensions() {
+        return String.format("  side: "+ side);
+    }
+
+
 
     @Override
     public double calculateSurfaceArea() {
@@ -70,7 +80,6 @@ public class Cube extends Shape3D{
     @Override
     public String toString() {
         return super.toString() +
-                String.format("\n*#Volume-Of-Cube:    " +calculateVolume(),
-                        "Surface area of Cube:      "+calculateSurfaceArea());
+                String.format("\n Efficiency ratio: "+getEfficiencyRatio());
     }
 }

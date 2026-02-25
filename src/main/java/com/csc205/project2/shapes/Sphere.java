@@ -39,6 +39,11 @@ public class Sphere extends Shape3D{
         this.radius =0.0;
     }
 
+    @Override
+    public String getDimensions() {
+        return String.format("radius: "+radius);
+    }
+
     public Sphere(String color, double radius) {
         // validation to verify that user is inputting a correct color
         super("Sphere", (color == null || color.trim().isEmpty()) ? "Unknown Color" : color);
@@ -84,8 +89,7 @@ public class Sphere extends Shape3D{
     @Override
     public String toString() {
         return super.toString() +
-                String.format("\n*#Volume-Of-Sphere:    " +calculateVolume(),
-                                "Surface area of Sphere:      "+calculateSurfaceArea());
+                String.format("\n Effieciency Ratio: "+getEfficiencyRatio());
     }
 
 
